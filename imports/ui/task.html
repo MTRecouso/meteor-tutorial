@@ -1,0 +1,24 @@
+<template name="task">
+<div class="col s12">
+<div class="{{#if checked}}card-panel green lighten-4{{else}}card-panel grey lighten-4 {{/if}} {{#if private}}private{{/if}}">
+  <li>
+    <input type="checkbox" id="{{_id}}" checked="{{checked}}" class="toggle-checked"/>
+    <label for="{{_id}}">{{username}} - {{text}}</label>
+    <div class="right">
+    <ul>
+      <li>  
+      {{#if isOwner}}
+        {{#if private}}
+          <a class="btn-floating waves-effect waves-light red toggle-private"><i class="material-icons">lock</i></a>
+        {{else}}
+          <a class="btn-floating waves-effect waves-light green toggle-private"><i class="material-icons">lock_open</i></a>
+        {{/if}}
+      {{/if}}
+          <a class="btn-floating waves-effect waves-light red"><i class="material-icons delete">delete</i></a>
+      </li>
+    </ul>
+    </div>
+  </li>
+  </div>
+  </div>
+</template>
